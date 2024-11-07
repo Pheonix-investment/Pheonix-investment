@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Withdraw Funds - Phoenix Investment Program</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Withdraw Funds</h1>
+        <p>Request to withdraw your available funds.</p>
+    </header>
+
+    <section class="withdraw">
+        <form action="submit-withdrawal-request.php" method="POST">
+            <label for="amount">Amount to Withdraw:</label>
+            <input type="number" id="amount" name="amount" required><br>
+
+            <label for="payment_method">Choose Payment Method:</label>
+            <select id="payment_method" name="payment_method" required>
+                <option value="bank_transfer">Bank Transfer</option>
+                <option value="e_wallet">E-Wallet (EasyPaisa, JazzCash)</option>
+            </select><br>
+
+            <input type="submit" value="Submit Withdrawal Request">
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Phoenix Investment Program | All Rights Reserved</p>
+    </footer>
+</body>
+</html>

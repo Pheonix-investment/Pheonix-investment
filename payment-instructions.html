@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Payment Instructions - Phoenix Investment</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <header>
+        <h1>Bank Payment Instructions</h1>
+        <p>To invest in the Phoenix Investment Program, please transfer the required amount to one of the bank accounts below. Then, submit your payment details for verification.</p>
+    </header>
+
+    <section>
+        <h2>Bank Account Details</h2>
+        <p><strong>Bank Name:</strong> Habib Bank Limited (HBL)</p>
+        <p><strong>Account Type:</strong> Current Account</p>
+        <p><strong>Account Number:</strong> 1234567890</p>
+        <p><strong>Account Holder Name:</strong> Phoenix Investment Program</p>
+        <p><strong>Branch Code:</strong> 1234</p>
+        <p><strong>SWIFT/BIC Code:</strong> HABBPKKA</p>
+
+        <h3>Transfer Instructions:</h3>
+        <ul>
+            <li>Make the payment via ATM, Bank Branch, or Online Banking.</li>
+            <li>After making the payment, fill out the payment confirmation form below.</li>
+        </ul>
+
+        <h2>Payment Confirmation Form</h2>
+        <form action="submit-payment-details.php" method="POST">
+            <label for="amount">Amount Transferred (in PKR):</label>
+            <input type="number" id="amount" name="amount" required><br>
+
+            <label for="transfer_date">Transfer Date:</label>
+            <input type="date" id="transfer_date" name="transfer_date" required><br>
+
+            <label for="transaction_id">Transaction ID:</label>
+            <input type="text" id="transaction_id" name="transaction_id" required><br>
+
+            <label for="transfer_method">Transfer Method:</label>
+            <select id="transfer_method" name="transfer_method" required>
+                <option value="atm">ATM</option>
+                <option value="branch">Bank Branch</option>
+                <option value="online_banking">Online Banking</option>
+            </select><br>
+
+            <input type="submit" value="Submit Payment Details">
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Phoenix Investment Program | All Rights Reserved</p>
+    </footer>
+</body>
+</html>
