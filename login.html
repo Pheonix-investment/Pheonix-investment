@@ -14,40 +14,28 @@
         <button type="submit">Login</button>
     </form>
 
-    <script>
-        document.getElementById("loginForm").addEventListener("submit", function(event) {
-            event.preventDefault();
-            const email = document.getElementById("email").value;
-            const password = document.getElementById("password").value;
+    <script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
 
-            auth.signInWithEmailAndPassword(email, password)
-                .then((userCredential) => {
-                    window.location.href = "dashboard.html"; // Redirect to dashboard
-                })
-                .catch((error) => {
-                    alert("Error: " + error.message);
-                });
-        });
-    </script>
-    </script>
-    <!-- Firebase SDKs -->
-    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-auth.js"></script>
-    
-    <script>
-        // Replace the below configuration with your Firebase config from the Firebase Console
-        const firebaseConfig = {
-            apiKey: "AIzaSyA9QWqOKLx1OIH560zgVrNub4JM1oaZQJc",
-            authDomain: "pheonix-investment-1d780.firebaseapp.com",
-            projectId: "pheonix-investment-1d780",
-            storageBucket: "pheonix-investment-1d780.firebasestorage.app",
-            messagingSenderId: "903567685017",
-            appId: "1:903567685017:web:bc6ea32c41b35540054f08"
-        };
-    
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-        const auth = firebase.auth();
-    </script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyA9QWqOKLx1OIH560zgVrNub4JM1oaZQJc",
+    authDomain: "pheonix-investment-1d780.firebaseapp.com",
+    projectId: "pheonix-investment-1d780",
+    storageBucket: "pheonix-investment-1d780.firebasestorage.app",
+    messagingSenderId: "903567685017",
+    appId: "1:903567685017:web:bc6ea32c41b35540054f08",
+    measurementId: "G-0DHMY80LZK"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
 </body>
 </html>
