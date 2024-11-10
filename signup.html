@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="signup.css">
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-auth.js"></script>
+</head>
+<body>
+    <div class="signup-container">
+        <h2>Create an Account</h2>
+        <form id="signup-form">
+            <label for="username">Username</label>
+            <input type="text" id="username" required>
+            
+            <label for="email">Email</label>
+            <input type="email" id="email" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" required>
+
+            <button type="submit">Sign Up</button>
+        </form>
+        <p>Already have an account? <a href="login.html">Log In</a></p>
+    </div>
+
+    <script>
+        // Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyA9QWqOKLx1OIH560zgVrNub4JM1oaZQJc",
+            authDomain: "pheonix-investment-1d780.firebaseapp.com",
+            projectId: "pheonix-investment-1d780",
+            storageBucket: "pheonix-investment-1d780.firebasestorage.app",
+            messagingSenderId: "903567685017",
+            appId: "1:903567685017:web:bc6ea32c41b35540054f08"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        // Signup form submission
+        document.getElementById('signup-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            // Firebase signup
+            firebase.auth().createUserWithEmailAndPassword(email, password)
+                .then((userCredential) => {
+                    alert('Account created successfully!');
+                    window.location.href = "login.html"; // Redirect to login page
+                })
+                .catch((error) => {
+                    alert(error.message); // Display error message
+                });
+        });
+    </script>
+</body>
+</html>
